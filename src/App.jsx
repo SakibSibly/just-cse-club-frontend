@@ -33,7 +33,9 @@ function App() {
         <Route path="/register" element={<MainComponent children={<RegisterAndLogout />} />} />
         <Route path="/logout" element={<Logout />} />
         <Route path='/events' element={<MainComponent children={<Events />} />} />
+        <Route path='/events/:id' element={<MainComponent children={<Events />} />} />
         <Route path='/notices' element={<MainComponent children={<Notices />} />} />
+        <Route path='/notices/:id' element={<MainComponent children={<Notices />} />} />
         <Route path='/about' element={<MainComponent children={<About />} />} />
         <Route path="/treasury" element={
           <ProtectedRoute>
