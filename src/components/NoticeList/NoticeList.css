@@ -1,0 +1,94 @@
+.notice-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.notice-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.create-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.create-btn:hover {
+    background: #0056b3;
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.notice-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* 
+.notice-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+} */
+
+.notice-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.edit-btn {
+    background: #28a745;
+}
+
+.edit-btn:hover {
+    background: #218838;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+.no-notices {
+    font-size: 16px;
+    color: #777;
+}
