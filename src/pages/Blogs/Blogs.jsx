@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api';
+import { formatDateTime } from '../../shared/utils/dateTimeConverter';
 import './Blogs.css';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const { id } = useParams();
-
-    // Helper function to format dates
-    const formatDateTime = (isoString) => {
-        const date = new Date(isoString);
-        return date.toLocaleString(undefined, {
-            dateStyle: 'medium',
-            timeStyle: 'short',
-        });
-    };
 
     useEffect(() => {
         // Fetch blogs from the backend
