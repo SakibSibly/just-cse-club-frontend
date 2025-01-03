@@ -24,6 +24,10 @@ const Login = () => {
             if (response.data.access) {
                 console.log("SUCCESS");
                 localStorage.setItem(ACCESS_TOKEN, response.data.access);
+                localStorage.setItem("user", JSON.stringify({
+                    email: response.data.email,
+                    isAdmin: response.data.is_admin
+                }));
                 window.location.href = "/";
             } else {
                 setErrorMessage("Invalid credentials. Please try again.");
