@@ -6,11 +6,16 @@ import { ACCESS_TOKEN } from "../../constants";
 
 const Navbar = () => {
     const [loggedIn, setLoggedIn] = useState(false);
+    const [adminUser, setAdminUser] = useState(false);
 
     useEffect(() => {
         // console.log(localStorage.getItem(ACCESS_TOKEN));
         if (localStorage.getItem(ACCESS_TOKEN)) {
             setLoggedIn(true);
+        }
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && user.isAdmin === true) {
+            setAdminUser(true);
         }
     }
     , []);
@@ -55,6 +60,7 @@ const Navbar = () => {
                 </ul>
                 <div>
                     <ul className="navbar-menu">
+                        {adminUser && <li><Link to="/admin">Admin Panel </Link></li>}
                         <li>
                             <HandleUserStatus />
                         </li>
