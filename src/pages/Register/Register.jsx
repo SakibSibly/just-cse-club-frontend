@@ -33,7 +33,7 @@ const Register = () => {
         setErrorMessage(errorData.message || "Failed to send OTP.");
       }
     } catch (error) {
-      setErrorMessage("An error occurred. Please try again later.");
+      setErrorMessage(error.response.data.error);
       console.error(error);
     }
   };
