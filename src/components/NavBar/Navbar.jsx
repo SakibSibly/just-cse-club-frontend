@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ACCESS_TOKEN } from "../../constants";
+import api from "../../api";
 
 
 const Navbar = () => {
@@ -9,14 +10,18 @@ const Navbar = () => {
     const [adminUser, setAdminUser] = useState(false);
 
     useEffect(() => {
-        // console.log(localStorage.getItem(ACCESS_TOKEN));
         if (localStorage.getItem(ACCESS_TOKEN)) {
             setLoggedIn(true);
         }
-        const user = JSON.parse(localStorage.getItem("user"));
-        if (user && user.isAdmin === true) {
-            setAdminUser(true);
+        const HandleAdminStatus = async () => {
+            await api.post("api/verify/admin/")
+            .then(() => setAdminUser(true))
+            .catch((error) => {
+                setAdminUser(false);
+                console.error(error);
+            });
         }
+        HandleAdminStatus();
     }
     , []);
 
@@ -60,7 +65,12 @@ const Navbar = () => {
                 </ul>
                 <div>
                     <ul className="navbar-menu">
-                        {adminUser && <li><Link to="/admin">Admin Panel </Link></li>}
+                        {
+                            adminUser &&
+                            <li>
+                            <Link to="/admin">Admin Dashboard</Link>
+                            </li>
+                        }
                         <li>
                             <HandleUserStatus />
                         </li>
