@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import api from "../../api";
-import { ACCESS_TOKEN } from "../../constants";
+import { ACCESS_TOKEN, EMAIL } from "../../constants";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -12,22 +12,15 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-
-            
             const response = await api.post("api/token/", {
                 email,
                 password
             });
             
-            // console.log(response.data);
-            
             if (response.data.access) {
                 console.log("SUCCESS");
                 localStorage.setItem(ACCESS_TOKEN, response.data.access);
-                localStorage.setItem("user", JSON.stringify({
-                    email: response.data.email,
-                    isAdmin: response.data.is_admin
-                }));
+                localStorage.setItem(EMAIL, email);
                 window.location.href = "/";
             } else {
                 setErrorMessage("Invalid credentials. Please try again.");
