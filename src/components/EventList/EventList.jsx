@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../api";
 import "./EventList.css"; // Import CSS file
 
@@ -7,6 +7,7 @@ const EventList = () => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         api.get("api/events/")
@@ -38,6 +39,7 @@ const EventList = () => {
 
             {error && <p className="error-message">{error}</p>}
             {loading && <p className="loading-message">Loading...</p>}
+            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
 
             <div className="event-actions">
                 <Link to="/admin/events/new" className="create-btn">➕ Create New Event</Link>

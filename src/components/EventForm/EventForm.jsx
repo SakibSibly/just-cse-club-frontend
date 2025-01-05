@@ -29,6 +29,7 @@ const EventForm = () => {
 
     return (
         <div className="event-form-container">
+            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
             <form onSubmit={handleSubmit} className="event-form">
                 <h2>Create Event</h2>
 

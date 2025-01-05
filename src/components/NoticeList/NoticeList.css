@@ -1,94 +1,127 @@
 .notice-container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 20px;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    text-align: center;
+}
+.back-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: background 0.3s ease;
 }
 
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+
 .notice-title {
+    text-align: center;
+    font-size: 28px;
     color: #333;
-    font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .create-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    background: #007bff;
-    color: white;
     text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .create-btn:hover {
-    background: #0056b3;
+    background-color: #0056b3;
+}
+
+.loading-message {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.error-message {
+    font-size: 18px;
+    color: red;
+    margin-top: 20px;
 }
 
 .notice-list {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 .notice-item {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8f9fa;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
-.notice-details h3 {
-    margin: 0;
-    font-size: 18px;
+.notice-title-text {
+    font-size: 20px;
     color: #333;
+    margin: 0;
 }
 
-/* 
 .notice-date {
     font-size: 14px;
-    font-weight: bold;
     color: #666;
-} */
+    margin: 5px 0;
+}
 
 .notice-actions {
     display: flex;
     gap: 10px;
 }
 
-.edit-btn,
-.delete-btn {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
+.edit-btn, .delete-btn {
     text-decoration: none;
-    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .edit-btn {
-    background: #28a745;
+    background-color: #ffc107;
+    color: #333;
 }
 
 .edit-btn:hover {
-    background: #218838;
+    background-color: #e0a800;
 }
 
 .delete-btn {
-    background: #dc3545;
+    background-color: #dc3545;
+    color: white;
+    border: none;
 }
 
 .delete-btn:hover {
-    background: #c82333;
+    background-color: #c82333;
 }
 
 .no-notices {
-    font-size: 16px;
+    font-size: 18px;
     color: #777;
+    margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, useAsyncError } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from "../../api";
 import "./BlogForm.css";
 import { EMAIL, ID } from "../../constants";
@@ -57,6 +57,8 @@ const BlogForm = () => {
 
     return (
         <div className="blog-form-container">
+            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
+
             <form onSubmit={handleSubmit} className="blog-form">
                 <h2>{id ? "Edit" : "Create"} Blog</h2>
 

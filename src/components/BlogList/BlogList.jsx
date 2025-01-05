@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../api";
 import "./BlogList.css"; // Import CSS file
 
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchBlogs();
@@ -36,6 +37,8 @@ const BlogList = () => {
     return (
         <div className="blog-list-container">
             <h2>Manage Blogs</h2>
+            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
+
             <Link to="/admin/blogs/new" className="create-btn">➕ Create New Blog</Link>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}

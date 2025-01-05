@@ -54,7 +54,7 @@ const NoticeForm = () => {
 
             {error && <p className="error-message">{error}</p>}
             {loading && <p className="loading-message">Loading...</p>}
-
+            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
             <form onSubmit={handleSubmit} className="notice-form">
                 <div className="form-group">
                     <label>Title</label>
