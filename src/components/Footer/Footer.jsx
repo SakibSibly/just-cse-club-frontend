@@ -38,6 +38,12 @@ const Footer = () => {
         <a className="link link-hover">Privacy policy</a>
         <a className="link link-hover">Cookie policy</a>
       </nav>
+
+      <div className="w-full text-center text-white mt-10 border-t pt-4">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} Nazmus Sakib Sibly & Abdullah Al Noman
+        </p>
+      </div>
     </footer>
   );
 };
