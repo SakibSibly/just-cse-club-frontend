@@ -1,12 +1,13 @@
 import React from 'react';
 import "./Footer.css"
+import img from "../../assets/images/logo/JUST_CSE_Club_logo_main.jpg"
 
 const Footer = () => {
   return (
       <footer className="footer-color-custom footer text-base-content p-10">
       <aside>
         <img
-          src='src/assets/images/logo/JUST_CSE_Club_logo_main.jpg'
+          src={img}
           className="fill-current h-32"
         />
         <p className='text-white'>
