@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css"; // Optional: Add styles if needed
+import "./Register.css";
 import api from "../../api";
 
 const Register = () => {
@@ -103,7 +103,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
+    <div className="register-container my-40">
       {stage === 1 && (
         <form className="register-form" onSubmit={handleEmailSubmit}>
           <h2>Register</h2>
