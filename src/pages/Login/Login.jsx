@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import api from "../../api";
 import { ACCESS_TOKEN } from "../../constants";
+import Notification from "../../components/Notification/Notification";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [notification, setNotification] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,7 +21,11 @@ const Login = () => {
             
             if (response.data.access) {
                 localStorage.setItem(ACCESS_TOKEN, response.data.access);
-                window.location.href = "/";
+                setNotification("Login successful! Redirecting..."); // Show notification
+
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 1500);
             } else {
                 setErrorMessage("Invalid credentials. Please try again.");
             }
@@ -31,6 +37,9 @@ const Login = () => {
 
     return (
         <div className="login-container">
+            {notification && (
+                <Notification message={notification} onClose={() => setNotification("")} />
+            )}
             <form className="login-form" onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}

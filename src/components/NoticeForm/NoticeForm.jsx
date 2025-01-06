@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../api";
-import "./NoticeForm.css"; // Import CSS file
 
 const NoticeForm = () => {
     const { id } = useParams();
@@ -49,35 +48,49 @@ const NoticeForm = () => {
     };
 
     return (
-        <div className="notice-form-container">
-            <h2 className="notice-form-title">{id ? "Edit" : "Create"} Notice</h2>
+        <div className="max-w-2xl mx-auto p-6">
+            {/* <div className="flex justify-between items-center mb-6"> */}
+                <button 
+                    onClick={() => navigate(-1)}
+                    className="mb-4 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                >
+                    🔙 Back
+                </button>
+                <h2 className="text-2xl font-bold">{id ? "Edit" : "Create"} Notice</h2>
+            {/* </div> */}
 
-            {error && <p className="error-message">{error}</p>}
-            {loading && <p className="loading-message">Loading...</p>}
-            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
-            <form onSubmit={handleSubmit} className="notice-form">
-                <div className="form-group">
-                    <label>Title</label>
+            {error && <p className="bg-red-100 text-red-600 p-4 rounded mb-4">{error}</p>}
+            {loading && <p className="text-gray-600 italic mb-4">Loading...</p>}
+
+            <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6 space-y-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="Enter Notice Title"
                         required
+                        className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                     />
                 </div>
 
-                <div className="form-group">
-                    <label>Description</label>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         placeholder="Enter Notice Description"
                         required
+                        className="w-full p-3 border border-gray-300 rounded h-32 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                     />
                 </div>
 
-                <button type="submit" className="save-btn" disabled={loading}>
+                <button 
+                    type="submit" 
+                    disabled={loading}
+                    className="w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+                >
                     {loading ? "Saving..." : "Save"}
                 </button>
             </form>

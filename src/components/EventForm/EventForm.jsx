@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api";
-import "./EventForm.css"; // Import CSS file
 
 const EventForm = () => {
     const navigate = useNavigate();
@@ -28,34 +27,73 @@ const EventForm = () => {
     };
 
     return (
-        <div className="event-form-container">
-            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
-            <form onSubmit={handleSubmit} className="event-form">
-                <h2>Create Event</h2>
+        <div className="max-w-2xl mx-auto p-6">
+            <button 
+                onClick={() => navigate(-1)}
+                className="mb-6 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+            >
+                🔙 Back
+            </button>
 
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6 space-y-6">
+                <h2 className="text-2xl font-bold">Create Event</h2>
 
-                <div className="form-group">
-                    <label>Title</label>
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter event title" required />
+                {errorMessage && (
+                    <p className="p-3 bg-red-100 text-red-600 rounded">{errorMessage}</p>
+                )}
+
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                    <input 
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Enter event title"
+                        required
+                        className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
                 </div>
 
-                <div className="form-group">
-                    <label>Description</label>
-                    <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter event details" required />
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <textarea 
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="Enter event details"
+                        required
+                        className="w-full p-3 border border-gray-300 rounded h-32 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
                 </div>
 
-                <div className="form-group">
-                    <label>Date & Time</label>
-                    <input type="datetime-local" value={date} onChange={(e) => setDate(e.target.value)} required />
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Date & Time</label>
+                    <input 
+                        type="datetime-local"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        required
+                        className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
                 </div>
 
-                <div className="form-group">
-                    <label>Venue</label>
-                    <input type="text" value={venue} onChange={(e) => setVenue(e.target.value)} placeholder="Enter venue location" required />
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Venue</label>
+                    <input 
+                        type="text"
+                        value={venue}
+                        onChange={(e) => setVenue(e.target.value)}
+                        placeholder="Enter venue location"
+                        required
+                        className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
                 </div>
 
-                <button type="submit" className="submit-btn">Save Event</button>
+                <button 
+                    type="submit"
+                    className="w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                >
+                    Save Event
+                </button>
             </form>
         </div>
     );

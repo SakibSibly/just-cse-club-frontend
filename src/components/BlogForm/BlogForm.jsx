@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../api";
-import "./BlogForm.css";
 import { EMAIL, ID } from "../../constants";
 
 const BlogForm = () => {
@@ -44,7 +43,7 @@ const BlogForm = () => {
             if (id) {
                 await api.put(`api/blogs/${id}/`, data);
             } else {
-                await api.post("api/blogs/", data );
+                await api.post("api/blogs/", data);
             }
             navigate("/admin/blogs");
         } catch (error) {
@@ -56,32 +55,51 @@ const BlogForm = () => {
     };
 
     return (
-        <div className="blog-form-container">
-            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
+        <div className="max-w-2xl mx-auto p-6">
+            <button 
+                onClick={() => navigate(-1)}
+                className="mb-6 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+            >
+                🔙 Back
+            </button>
 
-            <form onSubmit={handleSubmit} className="blog-form">
-                <h2>{id ? "Edit" : "Create"} Blog</h2>
+            <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6">
+                    {id ? "Edit" : "Create"} Blog
+                </h2>
 
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                {errorMessage && (
+                    <p className="mb-4 p-3 bg-red-100 text-red-600 rounded">
+                        {errorMessage}
+                    </p>
+                )}
 
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Title"
-                    required
-                />
+                <div className="space-y-4">
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Title"
+                        required
+                        className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
 
-                <textarea
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Description"
-                    required
-                />
+                    <textarea
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="Description"
+                        required
+                        className="w-full p-3 border border-gray-300 rounded h-48 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
 
-                <button type="submit" disabled={loading}>
-                    {loading ? "Saving..." : "Save"}
-                </button>
+                    <button 
+                        type="submit" 
+                        disabled={loading}
+                        className="w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+                    >
+                        {loading ? "Saving..." : "Save"}
+                    </button>
+                </div>
             </form>
         </div>
     );

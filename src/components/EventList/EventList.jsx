@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../api";
-import "./EventList.css"; // Import CSS file
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
@@ -34,34 +33,53 @@ const EventList = () => {
     };
 
     return (
-        <div className="event-list-container">
-            <h2 className="event-list-title">Manage Events</h2>
+        <div className="max-w-4xl mx-auto p-6">
+            <h2 className="text-3xl font-bold mb-6">Manage Events</h2>
 
-            {error && <p className="error-message">{error}</p>}
-            {loading && <p className="loading-message">Loading...</p>}
-            <button className="back-btn" onClick={() => navigate(-1)}>🔙 Back</button>
+            {error && <p className="bg-red-100 text-red-600 p-4 rounded mb-4">{error}</p>}
+            {loading && <p className="text-gray-600 italic">Loading...</p>}
+            
+            <div className="flex justify-between items-center mb-6">
+                <button 
+                    onClick={() => navigate(-1)}
+                    className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                >
+                    🔙 Back
+                </button>
 
-            <div className="event-actions">
-                <Link to="/admin/events/new" className="create-btn">➕ Create New Event</Link>
+                <Link 
+                    to="/admin/events/new"
+                    className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded transition-colors"
+                >
+                    ➕ Create New Event
+                </Link>
             </div>
 
-            <ul className="event-list">
+            <ul className="space-y-4">
                 {events.length === 0 && !loading ? (
-                    <p className="no-events">No events found.</p>
+                    <p className="text-gray-500 text-center py-8">No events found.</p>
                 ) : (
                     events.map(event => (
-                        <li key={event.id} className="event-item">
-                            <div>
-                                <span className="event-title">{event.title}</span>
-                                <span className="event-date">
-                                    <p className="event-date">
+                        <li key={event.id} className="bg-white shadow rounded-lg p-4 flex justify-between items-center hover:shadow-md transition-shadow">
+                            <div className="space-y-2">
+                                <span className="text-lg font-semibold block">{event.title}</span>
+                                <span className="text-gray-600 text-sm">
                                     📅 {new Date(event.date).toLocaleDateString()} {new Date(event.date).toLocaleTimeString()}
-                                    </p>
                                 </span>
                             </div>
-                            <div className="event-actions">
-                                <Link to={`/admin/events/edit/${event.id}`} className="edit-btn">Edit</Link>
-                                <button onClick={() => handleDelete(event.id)} className="delete-btn">🗑️ Delete</button>
+                            <div className="flex gap-3">
+                                <Link 
+                                    to={`/admin/events/edit/${event.id}`}
+                                    className="px-3 py-1 bg-green-500 text-white hover:bg-green-600 rounded transition-colors"
+                                >
+                                    Edit
+                                </Link>
+                                <button 
+                                    onClick={() => handleDelete(event.id)}
+                                    className="px-3 py-1 bg-red-500 text-white hover:bg-red-600 rounded transition-colors"
+                                >
+                                    🗑️ Delete
+                                </button>
                             </div>
                         </li>
                     ))
