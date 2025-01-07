@@ -72,7 +72,7 @@ const EventList = () => {
                                     to={`/admin/events/edit/${event.id}`}
                                     className="px-3 py-1 bg-green-500 text-white hover:bg-green-600 rounded transition-colors"
                                 >
-                                    Edit
+                                    ✏️ Edit
                                 </Link>
                                 <button 
                                     onClick={() => handleDelete(event.id)}
