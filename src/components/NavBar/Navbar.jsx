@@ -74,18 +74,18 @@ const Navbar = () => {
                         <Link to="/about" className={location.pathname.startsWith("/about") ? "active-link" : ""}>About</Link>
                     </li>
                 </ul>
-                <div className="">
+                <div>
                     <ul className="navbar-menu font-mono">
                         {adminUser && (
-                            <li className="">
+                            <li>
                                 <Link to="/admin" className={location.pathname.startsWith("/admin") ? "active-link" : ""}>Admin Dashboard</Link>
                             </li>
                         )}
                         <li>
                             {loggedIn ? (
-                                <button className="text-white font-semibold font-mono" onClick={handleLogout}>Logout</button>
+                                <button className="text-white font-semibold font-mono logout-custom" onClick={handleLogout}>Logout</button>
                             ) : (
-                                <Link to="/login">Login</Link>
+                                <Link className="login-custom" to="/login">Login</Link>
                             )}
                         </li>
                     </ul>
