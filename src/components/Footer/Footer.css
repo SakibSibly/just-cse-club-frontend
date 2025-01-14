@@ -1,3 +1,7 @@
 .footer-color-custom {
     background-color: #22688e;
 }
+
+.dev-name:hover {
+    text-decoration: underline;
+}

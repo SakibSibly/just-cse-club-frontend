@@ -20,31 +20,39 @@ const Footer = () => {
       </aside>
       <nav className='text-white'>
         <h6 className="footer-title">Learn More</h6>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
+        <a className="link link-hover">Terms of Use</a>
+        <a className="link link-hover">Privacy Policy</a>
+        <a className="link link-hover">Cookie Policy</a>
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Get Involved</h6>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Club committee</a>
+        <a className="link link-hover">About Us</a>
+        <a className="link link-hover">Club Constitution</a>
+        <a className="link link-hover">Club Committee</a>
+        <a className="link link-hover">Alumni Section</a>
+        <a href="" className="link link-hover">Feedback</a>
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Follow Us</h6>
-        <a className="link link-hover">JUST</a>
-        <a className="link link-hover">CSE Department</a>
-        <a className="link link-hover">Facebook</a>
+        <a className="link link-hover" href='https://just.edu.bd/'>JUST</a>
+        <a className="link link-hover" href='https://cse.just.edu.bd/'>CSE Department</a>
+        <a className="link link-hover" href='https://www.facebook.com/just.cseclub'>Facebook</a>
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Support Us</h6>
-        <a className="link link-hover">Alumni section</a>
         <a className="link link-hover">Donation</a>
+        <a className="link link-hover">Contact</a>
       </nav>
 
       <div className="w-full text-center text-white mt-10 border-t pt-4">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} Nazmus Sakib Sibly & Abdullah Al Noman
+          &copy; {new Date().getFullYear()}
+          &nbsp;
+          <a href="https://www.linkedin.com/in/sakibsibly/" className='dev-name'>Nazmus Sakib Sibly</a>
+          &nbsp;
+          &
+          &nbsp;
+          <a href="https://www.linkedin.com/in/nomanstine/" className='dev-name'>Abdullah Al Noman</a>
         </p>
       </div>
     </footer>
