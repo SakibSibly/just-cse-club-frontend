@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './Home.css'; // Import the CSS for the background
 
 const Home = () => {
   const images = import.meta.glob('../../assets/images/intro/*.{png,jpg,jpeg,webp}', { eager: true });
@@ -49,9 +50,9 @@ const Home = () => {
             Welcome to the Computer Science and Engineering Club at JUST
           </h3>
           <p className="text-lg text-gray-700 text-justify mt-2">
-          At the CSE Club of Jashore University of Science and Technology (JUST), we are dedicated to nurturing the next generation of tech innovators. Our vision is to inspire creativity, foster collaboration, and empower students to lead in the fast-evolving world of technology.
-          Through hands-on projects, coding competitions, workshops, and industry collaborations, we equip our members with the skills and knowledge needed to tackle real-world challenges. Whether it’s Artificial Intelligence, Machine Learning, Blockchain, or Cybersecurity, our club provides a dynamic environment for exploring cutting-edge technologies.
-          Join us in pushing the boundaries of innovation, turning ideas into reality, and shaping the future of tech!
+            At the CSE Club of Jashore University of Science and Technology (JUST), we are dedicated to nurturing the next generation of tech innovators. Our vision is to inspire creativity, foster collaboration, and empower students to lead in the fast-evolving world of technology.
+            Through hands-on projects, coding competitions, workshops, and industry collaborations, we equip our members with the skills and knowledge needed to tackle real-world challenges. Whether it’s Artificial Intelligence, Machine Learning, Blockchain, or Cybersecurity, our club provides a dynamic environment for exploring cutting-edge technologies.
+            Join us in pushing the boundaries of innovation, turning ideas into reality, and shaping the future of tech!
           </p>
           <p className="text-gray-500 text-sm mt-12">
             Best of Luck
