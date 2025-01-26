@@ -11,7 +11,7 @@ const Footer = () => {
           className="fill-current h-32"
         />
         <p className='text-white'>
-          Department of Computer Science and Engineering
+          Dept of Computer Science and Engineering
           <br />
           Jashore University of Science and Technology
           <br />
