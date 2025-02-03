@@ -60,7 +60,12 @@ function App() {
         <Route path='/notices' element={<MainComponent children={<Notices />} />} />
         <Route path='/notices/:id' element={<MainComponent children={<Notices />} />} />
         <Route path='/about' element={<MainComponent children={<About />} />} />
-        <Route path='/feedbacks' element={<MainComponent children={<FeedBack />} />} />
+        <Route path='/feedbacks' element={
+          <ProtectedRoute>
+            <MainComponent children={<FeedBack />} />
+          </ProtectedRoute>
+        }
+        />
         <Route path="/treasury" element={
           <ProtectedRoute>
             <MainComponent children={<Treasury />} />
