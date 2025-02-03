@@ -19,6 +19,7 @@ import EventList from "./components/EventList/EventList"
 import EventForm from "./components/EventForm/EventForm"
 import NoticeList from "./components/NoticeList/NoticeList"
 import NoticeForm from "./components/NoticeForm/NoticeForm"
+import FeedBack from "./pages/FeedBack/FeedBack"
 
 
 const Logout = () => {
@@ -59,6 +60,7 @@ function App() {
         <Route path='/notices' element={<MainComponent children={<Notices />} />} />
         <Route path='/notices/:id' element={<MainComponent children={<Notices />} />} />
         <Route path='/about' element={<MainComponent children={<About />} />} />
+        <Route path='/feedbacks' element={<MainComponent children={<FeedBack />} />} />
         <Route path="/treasury" element={
           <ProtectedRoute>
             <MainComponent children={<Treasury />} />

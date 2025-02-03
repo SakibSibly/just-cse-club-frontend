@@ -30,7 +30,7 @@ const Footer = () => {
         <a className="link link-hover">Club Constitution</a>
         <a className="link link-hover">Club Committee</a>
         <a className="link link-hover">Alumni Section</a>
-        <a href="" className="link link-hover">Feedback</a>
+        <a href='feedbacks/' className="link link-hover">Feedback</a>
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Follow Us</h6>
