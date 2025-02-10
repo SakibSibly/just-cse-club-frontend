@@ -26,11 +26,11 @@ const Footer = () => {
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Get Involved</h6>
-        <a className="link link-hover">About Us</a>
-        <a className="link link-hover">Club Constitution</a>
-        <a className="link link-hover">Club Committee</a>
-        <a className="link link-hover">Alumni Section</a>
-        <a href='feedbacks/' className="link link-hover">Feedback</a>
+        <a href='about' className="link link-hover">About Us</a>
+        <a href='club-constitution' className="link link-hover">Club Constitution</a>
+        <a href='club-committee' className="link link-hover">Club Committee</a>
+        <a href='alumni' className="link link-hover">Alumni Section</a>
+        <a href='feedbacks' className="link link-hover">Feedback</a>
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Follow Us</h6>
