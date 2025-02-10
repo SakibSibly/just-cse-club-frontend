@@ -20,6 +20,9 @@ import EventForm from "./components/EventForm/EventForm"
 import NoticeList from "./components/NoticeList/NoticeList"
 import NoticeForm from "./components/NoticeForm/NoticeForm"
 import FeedBack from "./pages/FeedBack/FeedBack"
+import Alumni from "./pages/Alumni/Alumni"
+import ClubConstitution from "./pages/ClubConstitution/ClubConstitution"
+import ClubCommittee from "./pages/ClubCommittee/ClubCommittee"
 
 
 const Logout = () => {
@@ -60,6 +63,9 @@ function App() {
         <Route path='/notices' element={<MainComponent children={<Notices />} />} />
         <Route path='/notices/:id' element={<MainComponent children={<Notices />} />} />
         <Route path='/about' element={<MainComponent children={<About />} />} />
+        <Route path='/club-committee' element={<MainComponent children={<ClubCommittee />} />} />
+        <Route path='/club-constitution' element={<MainComponent children={<ClubConstitution />} />} />
+        <Route path='/alumni' element={<MainComponent children={<Alumni />} />} />
         <Route path='/feedbacks' element={
           <ProtectedRoute>
             <MainComponent children={<FeedBack />} />
