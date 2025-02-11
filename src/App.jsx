@@ -23,6 +23,7 @@ import FeedBack from "./pages/FeedBack/FeedBack"
 import Alumni from "./pages/Alumni/Alumni"
 import ClubConstitution from "./pages/ClubConstitution/ClubConstitution"
 import ClubCommittee from "./pages/ClubCommittee/ClubCommittee"
+import Donation from "./pages/Donation/Donation"
 
 
 const Logout = () => {
@@ -66,6 +67,7 @@ function App() {
         <Route path='/club-committee' element={<MainComponent children={<ClubCommittee />} />} />
         <Route path='/club-constitution' element={<MainComponent children={<ClubConstitution />} />} />
         <Route path='/alumni' element={<MainComponent children={<Alumni />} />} />
+        <Route path='/donation' element={<MainComponent children={<Donation />} />} />
         <Route path='/feedbacks' element={
           <ProtectedRoute>
             <MainComponent children={<FeedBack />} />

@@ -40,7 +40,7 @@ const Footer = () => {
       </nav>
       <nav className='text-white'>
         <h6 className="footer-title">Support Us</h6>
-        <a className="link link-hover">Donation</a>
+        <a href='donation' className="link link-hover">Donation</a>
         <a className="link link-hover">Contact</a>
       </nav>
 
